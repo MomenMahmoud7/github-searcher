@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  align-items: center;
+  height: 7rem;
+  padding: 0 5%;
+  .image {
+    width: auto;
+    height: 4rem;
+  }
+  .info {
+    padding: 0 1rem;
+    h3 {
+      margin: 0;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}

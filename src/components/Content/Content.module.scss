@@ -1,0 +1,51 @@
+@-webkit-keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+  
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.container {
+  position: relative;
+  .overlay {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+    animation: loading 1s 0s infinite linear;
+    -webkit-animation: loading 1s 0s infinite linear;
+  }
+  .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, auto));
+    grid-gap: 1rem;
+    height: calc(100vh - 11rem);
+    margin: 1rem 0 0 0;
+    overflow-y: scroll;
+  }
+}
+.loader {
+  height: 75vh;
+}

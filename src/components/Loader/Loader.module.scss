@@ -1,0 +1,61 @@
+@-webkit-keyframes loading {
+  50% {
+    opacity: 0.2;
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75); 
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1); 
+  }
+}
+  
+@keyframes loading {
+  50% {
+    opacity: 0.2;
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75); 
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1); 
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .circle {
+    border-radius: 100%;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    background-color: black;
+    -webkit-animation: loading 0.7s 0s infinite linear;
+    animation: loading 0.7s 0s infinite linear;
+  }
+  .circle:nth-child(2n-1) {
+    -webkit-animation-delay: -0.35s !important;
+    animation-delay: -0.35s !important;
+  }
+}
+.small {
+  .circle {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+.normal {
+  .circle {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+.large {
+  .circle {
+    width: 2rem;
+    height: 2rem;
+  }
+}
