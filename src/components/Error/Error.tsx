@@ -1,12 +1,10 @@
 import classes from './Error.module.scss';
 
-const Error = ({ error }:{error:string}) => {
-  console.log('object');
-  return (
-    <div className={classes.container}>
-      {error}
-    </div>
-  );
-};
+const Error = ({ error }:{error:string|null}) => (
+  <div className={classes.container}>
+    <h1>Error  :(</h1>
+    <p>{error || 'Something went wrong'}</p>
+  </div>
+);
 
 export default Error;

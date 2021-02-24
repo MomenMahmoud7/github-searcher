@@ -3,7 +3,7 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 import { persistReducer, persistStore } from 'redux-persist';
-import localStorage from 'redux-persist/lib/storage';
+import sessionStorage from 'redux-persist/es/storage/session';
 import fetchReducer from './reducers/fetchReducer';
 import searchReducer from './reducers/searchReducer';
 
@@ -14,7 +14,7 @@ const reducers = combineReducers({
 
 const persistConfig = {
   key: 'root',
-  storage: localStorage,
+  storage: sessionStorage,
 };
 
 const persistedReducers = persistReducer(persistConfig, reducers);

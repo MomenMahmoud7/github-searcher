@@ -14,7 +14,7 @@ export interface FetchState {
   loading:boolean,
   scrollLoading:boolean,
   error:string|null,
-  data:any[]
+  data:any
 }
 
 export interface State {
@@ -48,4 +48,12 @@ export interface User {
   login: string,
   id: string,
   html_url: string
+}
+export interface Repo {
+  owner: User,
+  stargazers_count:number,
+  html_url:string,
+  created_at:string,
+  id:number,
+  name:string,
 }

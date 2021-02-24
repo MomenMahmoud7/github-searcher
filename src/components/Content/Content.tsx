@@ -9,6 +9,7 @@ import UserCard from '../UserCard/UserCard';
 import RepoCard from '../RepoCard/RepoCard';
 import Error from '../Error/Error';
 import NotFound from '../NotFound/NotFound';
+import { setScrollLoading } from '../../redux/actions/fetchActions';
 
 import classes from './Content.module.scss';
 
@@ -36,19 +37,22 @@ const Content = () => {
   const onScroll = (event:UIEvent<HTMLDivElement>) => {
     const { currentTarget: { scrollHeight, scrollTop, clientHeight } } = event;
     const listBottomReached = scrollHeight - clientHeight === Math.trunc(scrollTop);
-    const debouncedSearch = _debounce(onSearch(searchText, searchType, pageNumber + 1, data), 500);
-    if (listBottomReached) dispatch(debouncedSearch);
+    if (!listBottomReached) return;
+    dispatch(setScrollLoading(true));
+    dispatch(_debounce(onSearch(searchText, searchType, pageNumber + 1, data), 500));
   };
 
+  const dataToRender = _get(data, `${searchText}-${searchType.value}`, []);
+
   if (loading) return <Loader size="normal" className={classes.loader} />;
-  if (error) return <Error error="error" />;
-  if (!data.length && searchText) return <NotFound />;
+  if (error) return <Error error={error} />;
+  if (searchText && !dataToRender.length) return <NotFound />;
 
   return (
     <div className={classes.container}>
       {scrollLoading ? <div className={classes.overlay} /> : null}
       <div className={classes.content} onScroll={onScroll}>
-        {data.map(_get(Card, searchType.value))}
+        {dataToRender.map(_get(Card, searchType.value))}
       </div>
     </div>
   );

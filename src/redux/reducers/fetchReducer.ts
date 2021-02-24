@@ -4,7 +4,7 @@ const initialState = {
   loading: false,
   scrollLoading: false,
   error: null,
-  data: [],
+  data: {},
 };
 
 const fetchReducer = (state = initialState, action:any) => {

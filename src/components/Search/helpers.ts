@@ -7,20 +7,32 @@ import { setPageNumber } from '../../redux/actions/searchActions';
 import { SearchType } from '../../types';
 
 const onSearch = (
-  text:string, type:SearchType, page:number, initialData:Array<any> = [],
+  text:string, type:SearchType, page:number, initialData:any = {},
 ) => async (dispatch:any) => {
-  if (initialData.length) dispatch(setScrollLoading(true));
-  else dispatch(setLoading(true));
-
   if (text.length < 3) {
-    dispatch(setData([]));
+    dispatch(setData({}));
     dispatch(setLoading(false));
     dispatch(setPageNumber(1));
     return;
   }
+
+  const cachedKey = `${text}-${type.value}`;
+  const cachedItems = _get(initialData, cachedKey, []);
+
+  if (cachedItems.length && cachedItems.length !== 30 * page) {
+    dispatch(setPageNumber(cachedItems.length / 30));
+    dispatch(setError(null));
+    dispatch(setLoading(false));
+    dispatch(setScrollLoading(false));
+    return;
+  }
+
   try {
     const data = await search({ searchType: type.value, searchText: text, pageNumber: page });
-    dispatch(setData([...initialData, ...data]));
+    dispatch(setData({
+      ...initialData,
+      [cachedKey]: [...cachedItems, ...data],
+    }));
     dispatch(setPageNumber(page));
     dispatch(setError(null));
     dispatch(setLoading(false));

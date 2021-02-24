@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import _debounce from 'lodash/debounce';
 import { ChangeEvent } from 'react';
 import { setSearchText, setSearchType } from '../../redux/actions/searchActions';
+import { setLoading } from '../../redux/actions/fetchActions';
 import { SearchType, State } from '../../types';
 import Select from '../Select/Select';
 import onSearch from './helpers';
@@ -13,18 +14,25 @@ const Search = () => {
     { label: 'User', value: 'users' },
     { label: 'Repository', value: 'repositories' },
   ];
-  const { searchType, searchText } = useSelector((state:State) => state.search);
+  const {
+    search: { searchType, searchText },
+    fetch: { data },
+  } = useSelector((state:State) => state);
   const dispatch = useDispatch();
 
   const onSelectChange = (type:SearchType) => {
     dispatch(setSearchType(type));
-    if (searchText) dispatch(onSearch(searchText, type, 1));
+    if (searchText) {
+      dispatch(setLoading(true));
+      dispatch(onSearch(searchText, type, 1, data));
+    }
   };
 
   const onTexChange = (event:ChangeEvent<HTMLInputElement>) => {
     const { target: { value } } = event;
     dispatch(setSearchText(value));
-    dispatch(onSearch(value, searchType, 1));
+    dispatch(setLoading(true));
+    dispatch(onSearch(value, searchType, 1, data));
   };
 
   return (

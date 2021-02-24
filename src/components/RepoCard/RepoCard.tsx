@@ -1,22 +1,25 @@
 import dayjs from 'dayjs';
+import { Repo } from '../../types';
 
 import classes from './RepoCard.module.scss';
 
-const RepoCard = (props: any) => {
+const RepoCard = (props: Repo, index:number) => {
   const {
     owner: {
       avatar_url: imageUrl,
-      login: userName, id,
+      login: userName,
       html_url: profileUrl,
+      id: userId,
     },
     stargazers_count: stars,
     html_url: repoUrl,
     created_at: createdAt,
+    id,
     name,
   } = props;
 
   return (
-    <a key={id} href={repoUrl} className={classes.container} rel="noreferrer" target="_blank">
+    <a key={id + userId + index} href={repoUrl} className={classes.container} rel="noreferrer" target="_blank">
       <div className={classes.content}>
         <h3>{name}</h3>
         <p>

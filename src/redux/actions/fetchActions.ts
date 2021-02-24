@@ -20,7 +20,7 @@ export const setError = (error:string|null) => ({
   payload: error,
 });
 
-export const setData = (data:any[]) => ({
+export const setData = (data:Object) => ({
   type: fetchActionsTypes.setData,
   payload: data,
 });
