@@ -19,7 +19,7 @@ const onSearch = (
   const cachedKey = `${text}-${type.value}`;
   const cachedItems = _get(initialData, cachedKey, []);
 
-  if (cachedItems.length && cachedItems.length !== 30 * page) {
+  if (cachedItems.length && cachedItems.length !== 30 * (page - 1)) {
     dispatch(setPageNumber(cachedItems.length / 30));
     dispatch(setError(null));
     dispatch(setLoading(false));
