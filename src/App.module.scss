@@ -1,10 +1,12 @@
-.container {
-  background-color: white;
-  min-height: 100vh;
-  --text-color: black;
-  --background-color: whitesmoke;
-}
 .dark {
   --text-color: whitesmoke;
   --background-color: black;
+}
+.light {
+  --text-color: black;
+  --background-color: whitesmoke;
+}
+.container {
+  min-height: 100vh;
+  background-color: white;
 }

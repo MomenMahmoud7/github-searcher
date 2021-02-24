@@ -41,11 +41,11 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20rem, auto));
     grid-gap: 1rem;
-    height: calc(100vh - 11rem);
+    height: 71vh;
     margin: 1rem 0 0 0;
     overflow-y: scroll;
   }
 }
 .loader {
-  height: 75vh;
+  height: 71vh;
 }

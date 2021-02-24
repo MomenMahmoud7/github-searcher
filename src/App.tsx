@@ -8,7 +8,7 @@ const App = () => {
   const darkTheme = false;
 
   return (
-    <main className={`${classes.container} ${darkTheme ? classes.dark : ''}`}>
+    <main className={`${darkTheme ? classes.dark : classes.light} ${classes.container}`}>
       <Header darkTheme={darkTheme} />
       <Route exact path="/" component={Home} />
     </main>

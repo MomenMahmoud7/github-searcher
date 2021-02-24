@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 export interface SearchType {
   label:string,
   value:string
@@ -40,4 +41,11 @@ export interface SelectProps {
   options:Option[],
   value:Option,
   onChange:OnChange
+}
+
+export interface User {
+  avatar_url: string,
+  login: string,
+  id: string,
+  html_url: string
 }
