@@ -11,8 +11,9 @@ const onSearch = (
 ) => async (dispatch:any) => {
   const cachedKey = `${text}-${type.value}`;
   const cachedItems = _get(initialData, cachedKey, []);
+  const cachedLengthCheck = cachedItems.length !== 30 * (page - 1);
 
-  if (cachedItems.length && cachedItems.length !== 30 * (page - 1)) {
+  if (cachedItems.length && cachedLengthCheck) {
     dispatch(setPageNumber(cachedItems.length / 30));
     dispatch(setError(null));
     dispatch(setLoading(false));
