@@ -1,46 +1,35 @@
-# Getting Started with Create React App
+# Getting Started with Github Search
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) to allow the users to search the users or repositories or issues on GitHub. The results will be fetched from the [GitHub API](https://docs.github.com/en/rest/reference/search)..
 
-## Available Scripts
+## Technologies used
 
-In the project directory, you can run:
+  - React
+  - React-Router
+  - React-Redux
+  - Redux-Persist
+  - TypeScript
 
-### `npm start`
+## Requirements
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+There will be two input fields, on search field for the user to type the text and a dropdown where user can either pick "User" or "Repository" to define the entities that they want to search. When the user doesn't have any input or clears the input, the input fields should be shown in the middle of the page.
+When the user starts typing into the input, make an API call to fetch the results and display them in grid. The data should be cached in the store and persisted via redux-persist and no more API calls should be made if we already have the results for the search term.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Expected
 
-### `npm test`
+Search will start after typing 3 or more characters and data will be fitched from Gitub API and cached in the session storage.
+When scrolling if the bottom reached data will be fitched from Gitub API and cached also under the same cached key.
+When the user search again for the same search terms data will be accessed from cached data.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Caching
 
-### `npm run build`
+Chosed to cache search result using search text and search type concatenated as a unique key for each search term.
+Stored data in session storage using redux-persist to be cleared after tab close.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Debouncing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Used lodash debounce to delay fetching data 1 second to give the user some time to decide the search without requesting data from Githup API.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Styling
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Used scss-module to ensure unique classnames.
