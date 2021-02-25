@@ -15,12 +15,15 @@
     justify-content: center;
     padding: 1rem;
     font-size: 90%;
-    p, h3, h4 {
+    p, h3, h4, h5 {
       margin: 0;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
       text-transform: capitalize;
+    }
+    h5 {
+      margin: 0.5rem 0;
     }
     .title {
       display: flex;
@@ -28,7 +31,10 @@
       justify-content: space-between;
       svg {
         margin: 0 0 0 0.5rem;
-        color: goldenrod;
+        color: red;
+      }
+      .active {
+        color: limegreen;
       }
       h3 {
         max-width: 15rem;

@@ -13,6 +13,7 @@ const Search = () => {
   const searchTypes = [
     { label: 'User', value: 'users' },
     { label: 'Repository', value: 'repositories' },
+    { label: 'Issues', value: 'issues' },
   ];
   const {
     search: { searchType, searchText },
@@ -30,6 +31,10 @@ const Search = () => {
 
   const onTexChange = (event:ChangeEvent<HTMLInputElement>) => {
     const { target: { value } } = event;
+    if (value.length < 3) {
+      dispatch(setSearchText(''));
+      return;
+    }
     dispatch(setSearchText(value));
     dispatch(setLoading(true));
     dispatch(onSearch(value, searchType, 1, data));

@@ -1,10 +1,13 @@
-import classes from './NotFound.module.scss';
+import { faMehBlank } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
-import notFoundImage from '../../assets/no-result.jpg';
+import classes from './NotFound.module.scss';
 
 const NotFound = () => (
   <div className={classes.container}>
-    <img src={notFoundImage} alt="Not Found" />
+    <Icon icon={faMehBlank} />
+    <h1>No Result Found</h1>
+    <p>Try changing the filter or search term</p>
   </div>
 );
 

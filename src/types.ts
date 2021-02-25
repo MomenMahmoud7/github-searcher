@@ -44,16 +44,25 @@ export interface SelectProps {
 }
 
 export interface User {
-  avatar_url: string,
-  login: string,
-  id: string,
-  html_url: string
+  avatar_url:string,
+  login:string,
+  id:string,
+  html_url:string
 }
 export interface Repo {
-  owner: User,
+  owner:User,
   stargazers_count:number,
   html_url:string,
   created_at:string,
   id:number,
   name:string,
+}
+export interface Issue {
+  user:User,
+  state:string,
+  html_url:string,
+  created_at:string,
+  id:number,
+  title:string,
+  body:string
 }

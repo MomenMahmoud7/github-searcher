@@ -1,25 +1,27 @@
 .container {
   display: flex;
   color: unset;
-  height: 6rem;
+  height: 5rem;
   font-size: 90%;
+  overflow: hidden;
   text-decoration: unset;
   transition: all 0.3s;
   border-radius: 0.25rem;
-  background-color: rgb(248, 248, 248);
-  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1);
+  border: 2px solid rgb(235, 235, 235);
   &:hover {
-    box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1);
   }
   img {
     width: auto;
-    height: 6rem;
-    min-width: 6rem;
+    height: 5rem;
+    min-width: 5rem;
+    border-radius: 0.25rem;
   }
   .content {
     display: flex;
+    align-items: center;
     h3 {
-      width: 13rem;
+      width: 14rem;
       margin: 1rem;
       overflow: hidden;
       white-space: nowrap;

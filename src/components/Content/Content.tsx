@@ -10,12 +10,14 @@ import RepoCard from '../RepoCard/RepoCard';
 import Error from '../Error/Error';
 import NotFound from '../NotFound/NotFound';
 import { setScrollLoading } from '../../redux/actions/fetchActions';
+import IssueCard from '../IssueCard/IssueCard';
 
 import classes from './Content.module.scss';
 
 const Card = {
-  users: UserCard,
   repositories: RepoCard,
+  users: UserCard,
+  issues: IssueCard,
 };
 
 const Content = () => {

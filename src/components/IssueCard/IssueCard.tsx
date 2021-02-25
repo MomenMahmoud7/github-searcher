@@ -1,36 +1,38 @@
 import dayjs from 'dayjs';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { Repo } from '../../types';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
+import { Issue } from '../../types';
 
-import classes from './RepoCard.module.scss';
+import classes from './IssueCard.module.scss';
 
-const RepoCard = (props: Repo, index:number) => {
+const IssueCard = (props: Issue, index:number) => {
   const {
-    owner: {
+    user: {
       avatar_url: imageUrl,
       login: userName,
       html_url: profileUrl,
       id: userId,
     },
-    stargazers_count: stars,
+    state,
     html_url: repoUrl,
     created_at: createdAt,
     id,
-    name,
+    title,
+    body,
   } = props;
 
   return (
     <a key={id + userId + index} href={repoUrl} className={classes.container} rel="noreferrer" target="_blank">
       <div className={classes.content}>
         <span className={classes.title}>
-          <h3>{name}</h3>
+          <h3>{title}</h3>
           <span>
-            <strong>{stars}</strong>
-            <Icon icon={faStar} />
+            <strong>{state}</strong>
+            <Icon icon={faCircle} className={state ? classes.active : ''} />
           </span>
         </span>
         <p className={classes.date}>{dayjs(createdAt).format('D MMMM YYYY')}</p>
+        <h5>{body || '----'}</h5>
       </div>
       <div className={classes.owner}>
         <img src={imageUrl} alt={userName} />
@@ -43,4 +45,4 @@ const RepoCard = (props: Repo, index:number) => {
     </a>
   );
 };
-export default RepoCard;
+export default IssueCard;

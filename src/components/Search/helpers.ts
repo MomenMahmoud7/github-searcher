@@ -9,13 +9,6 @@ import { SearchType } from '../../types';
 const onSearch = (
   text:string, type:SearchType, page:number, initialData:any = {},
 ) => async (dispatch:any) => {
-  if (text.length < 3) {
-    dispatch(setData({}));
-    dispatch(setLoading(false));
-    dispatch(setPageNumber(1));
-    return;
-  }
-
   const cachedKey = `${text}-${type.value}`;
   const cachedItems = _get(initialData, cachedKey, []);
 
