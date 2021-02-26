@@ -5,8 +5,10 @@
   .input {
     font-size: 100%;
     outline: unset;
-    width: 25rem;
     height: 3rem;
+    min-width: 10rem;
+    width: 100%;
+    max-width: 25rem;
     padding: 0 1rem;
     color: var(--secondary-light);
     box-sizing: border-box;
