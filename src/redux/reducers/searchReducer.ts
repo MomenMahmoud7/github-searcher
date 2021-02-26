@@ -1,7 +1,7 @@
 import { searchActionsTypes } from '../actions/searchActions';
 
 const initialState = {
-  searchType: { value: 'repositories', label: 'Repository' },
+  searchType: { value: 'users', label: 'Users' },
   searchText: '',
   pageNumber: 1,
 };

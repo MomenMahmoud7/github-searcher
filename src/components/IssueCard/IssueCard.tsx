@@ -23,25 +23,21 @@ const IssueCard = (props: Issue, index:number) => {
 
   return (
     <a key={id + userId + index} href={repoUrl} className={classes.container} rel="noreferrer" target="_blank">
-      <div className={classes.content}>
-        <span className={classes.title}>
-          <h3>{title}</h3>
-          <span>
-            <strong>{state}</strong>
-            <Icon icon={faCircle} className={state ? classes.active : ''} />
-          </span>
+      <span className={classes.header}>
+        <strong>{title}</strong>
+        <span>
+          <strong>{state}</strong>
+          <Icon icon={faCircle} className={state ? classes.active : ''} />
         </span>
-        <p className={classes.date}>{dayjs(createdAt).format('D MMMM YYYY')}</p>
-        <h5>{body || '----'}</h5>
+      </span>
+      <div className={classes.content}>
+        <p>{dayjs(createdAt).format('D MMMM YYYY')}</p>
+        <p>{body || '----'}</p>
       </div>
-      <div className={classes.owner}>
+      <a href={profileUrl} rel="noreferrer" target="_blank" className={classes.footer}>
         <img src={imageUrl} alt={userName} />
-        <div className={classes.content}>
-          <a href={profileUrl} rel="noreferrer" target="_blank">
-            <h4>{userName}</h4>
-          </a>
-        </div>
-      </div>
+        <strong>{userName}</strong>
+      </a>
     </a>
   );
 };
