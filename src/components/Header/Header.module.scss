@@ -1,21 +1,25 @@
 .container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 6rem;
   padding: 0 5%;
-  background-color: white;
-  box-shadow: 0 2px 2px -1px var(--light);
-  .image {
-    width: auto;
-    height: 4rem;
-  }
-  .info {
-    padding: 0 1rem;
-    h3 {
-      margin: 0;
+  background-color: var(--primary);
+  .identity {
+    display: flex;
+    align-items: center;
+    .image {
+      width: auto;
+      height: 4rem;
     }
-    p {
-      margin: 0;
+    .info {
+      padding: 0 1rem;
+      h3 {
+        margin: 0;
+      }
+      p {
+        margin: 0;
+      }
     }
   }
 }

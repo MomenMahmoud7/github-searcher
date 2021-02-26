@@ -1,16 +1,21 @@
 .dark {
-  --lightest: rgba(255, 255, 255, 0.1);
-  --light: rgba(255, 255, 255, 0.2);
-  --dimmed: rgba(255, 255, 255, 0.6);
-  --blacked: white;
+  --primary: black;
+  --primary-dark: rgb(35, 35, 35);
+  --primary-darkest: rgb(75, 75, 75);
+  --secondary: white;
+  --secondary-light: whitesmoke;
+  --secondary-lightest: rgb(225, 225, 225);
 }
 .light {
-  --lightest: rgba(0, 0, 0, 0.1);
-  --light: rgba(0, 0, 0, 0.2);
-  --dimmed: rgba(0, 0, 0, 0.6);
-  --blacked: black;
+  --primary: white;
+  --primary-dark: whitesmoke;
+  --primary-darkest: rgb(225, 225, 225);
+  --secondary: black;
+  --secondary-light: rgb(35, 35, 35);
+  --secondary-lightest: rgb(75, 75, 75);
 }
 .container {
   min-height: 100vh;
-  background-color: whitesmoke;
+  color: var(--secondary);
+  background-color: var(--primary-dark);
 }

@@ -9,19 +9,19 @@
     width: 25rem;
     height: 3rem;
     padding: 0 1rem;
-    color: var(--dimmed);
+    color: var(--secondary-light);
     box-sizing: border-box;
     transition: all 0.3s;
     background: transparent;
-    border: 2px solid var(--light);
+    border: 2px solid var(--primary-darkest);
     ::-moz-focus-inner {
       border: 0;
       padding: 0;
     }
-    &:hover {
-      color: var(--blacked);
-      background: white;
-      border-color: var(--dimmed);
+    &:hover, &:focus {
+      color: var(--secondary);
+      background: var(--primary);
+      border-color: var(--secondary-light);
     }
   }
 }

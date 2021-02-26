@@ -10,10 +10,10 @@
   overflow: hidden;
   height: 10rem;
   transition: all 0.3s;
-  background-color: white;
-  border: 2px solid var(--light);
+  background-color: var(--primary);
+  border: 2px solid var(--primary-darkest);
   &:hover {
-    border-color: var(--dimmed);
+    border-color: var(--secondary-light);
   }
   .header {
     display: flex;
@@ -45,7 +45,7 @@
       max-width: 16rem;
       margin: 0;
       font-size: 85%;
-      color: var(--dimmed);
+      color: var(--secondary-light);
     }
     
   }
@@ -57,9 +57,9 @@
     color: unset;
     text-decoration: unset;
     text-transform: capitalize;
-    background-color: whitesmoke;
+    background-color: var(--primary-dark);
     transition: all 0.3s;
-    border-top: 2px solid var(--light);
+    border-top: 2px solid var(--primary-darkest);
     img {
       height: 3rem;
       width: 3rem;
@@ -68,14 +68,13 @@
       @include text;
       max-width: 14rem;
       margin: 0 1rem;
-      color: var(--dimmed);
+      color: var(--secondary-light);
       transition: all 0.3s;
     }
     &:hover {
-      border-color: var(--dimmed);
-      background-color: rgb(235, 235, 235);
+      border-color: var(--secondary-light);
       strong {
-        color: var(--blacked);
+        color: var(--secondary);
       }
     }
   }

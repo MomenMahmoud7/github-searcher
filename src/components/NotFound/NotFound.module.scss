@@ -5,16 +5,16 @@
   justify-content: center;
   min-height: 60vh;
   svg {
-    color: var(--dimmed);
+    color: var(--secondary-light);
     font-size: 1000%;
   }
   h1 {
     font-size: 200%;
-    color: var(--dimmed);
+    color: var(--secondary-light);
     margin: 2rem 0 0 0;
   }
   p {
-    color: gray;
+    color: var(--secondary-lightest);
     font-size: 125%;
     max-width: 70%;
     margin: 0;
