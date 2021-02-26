@@ -1,20 +1,27 @@
 .container {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 0;
   .input {
     font-size: 100%;
     outline: unset;
-    width: 30rem;
+    width: 25rem;
     height: 3rem;
     padding: 0 1rem;
-    color: dimgray;
+    color: var(--dimmed);
     box-sizing: border-box;
-    border-radius: 0.125rem;
     transition: all 0.3s;
-    border: 2px solid rgb(240, 240, 240);
+    background: transparent;
+    border: 2px solid var(--light);
+    ::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
     &:hover {
-      color: black;
-      border-color: lightgray;
+      color: var(--blacked);
+      background: white;
+      border-color: var(--dimmed);
     }
   }
 }

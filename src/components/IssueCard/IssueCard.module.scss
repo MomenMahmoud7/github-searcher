@@ -8,11 +8,12 @@
   text-decoration: unset;
   text-transform: capitalize;
   overflow: hidden;
-  height: 11rem;
+  height: 12rem;
   transition: all 0.3s;
-  border: 2px solid rgb(240, 240, 240);
+  background-color: white;
+  border: 2px solid var(--light);
   &:hover {
-    border-color: lightgray;
+    border-color: var(--dimmed);
   }
   .header {
     display: flex;
@@ -44,21 +45,21 @@
       max-width: 16rem;
       margin: 0;
       font-size: 85%;
-      color: dimgray;
+      color: var(--dimmed);
     }
     
   }
   .footer {
     display: flex;
     align-items: center;
-    height: 4rem;
+    height: 5rem;
     padding: 0 1rem;
     color: unset;
     text-decoration: unset;
     text-transform: capitalize;
     background-color: whitesmoke;
     transition: all 0.3s;
-    border-top: 2px solid rgb(240, 240, 240);
+    border-top: 2px solid var(--light);
     img {
       width: 3rem;
       height: 3rem;
@@ -67,14 +68,14 @@
       @include text;
       max-width: 14rem;
       margin: 0 1rem;
-      color: dimgray;
+      color: var(--dimmed);
       transition: all 0.3s;
     }
     &:hover {
-      border-color: lightgray;
-      background-color: rgb(240, 240, 240);
+      border-color: var(--dimmed);
+      background-color: rgb(235, 235, 235);
       strong {
-        color: black;
+        color: var(--blacked);
       }
     }
   }

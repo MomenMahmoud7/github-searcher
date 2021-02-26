@@ -1,12 +1,16 @@
 .dark {
-  --text-color: whitesmoke;
-  --background-color: black;
+  --lightest: rgba(255, 255, 255, 0.1);
+  --light: rgba(255, 255, 255, 0.2);
+  --dimmed: rgba(255, 255, 255, 0.6);
+  --blacked: white;
 }
 .light {
-  --text-color: black;
-  --background-color: whitesmoke;
+  --lightest: rgba(0, 0, 0, 0.1);
+  --light: rgba(0, 0, 0, 0.2);
+  --dimmed: rgba(0, 0, 0, 0.6);
+  --blacked: black;
 }
 .container {
   min-height: 100vh;
-  background-color: white;
+  background-color: whitesmoke;
 }

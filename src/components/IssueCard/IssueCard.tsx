@@ -35,7 +35,7 @@ const IssueCard = (props: Issue, index:number) => {
         <p>{body || '----'}</p>
       </div>
       <a href={profileUrl} rel="noreferrer" target="_blank" className={classes.footer}>
-        <img src={imageUrl} alt={userName} />
+        <img src={imageUrl} alt="" />
         <strong>{userName}</strong>
       </a>
     </a>

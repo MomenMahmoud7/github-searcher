@@ -33,7 +33,7 @@ const RepoCard = (props: Repo, index:number) => {
         <p>{dayjs(createdAt).format('D MMMM YYYY')}</p>
       </div>
       <a href={profileUrl} rel="noreferrer" target="_blank" className={classes.footer}>
-        <img src={imageUrl} alt={userName} />
+        <img src={imageUrl} alt="" />
         <strong>{userName}</strong>
       </a>
     </a>

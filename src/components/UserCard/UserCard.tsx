@@ -8,7 +8,7 @@ const UserCard = (props: User, index:number) => {
   } = props;
   return (
     <a key={id + index} href={profileUrl} rel="noreferrer" target="_blank" className={classes.container}>
-      <img src={imageUrl} alt={userName} />
+      <img src={imageUrl} alt="" />
       <div className={classes.content}>
         <strong>{userName}</strong>
       </div>

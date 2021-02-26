@@ -7,26 +7,25 @@
   border: unset;
   width: 100%;
   height: 3rem;
-  color: dimgray;
+  color: var(--dimmed);
   font-size: 100%;
   padding: 0 1rem;
-  background-color: white;
-  border: 2px solid rgb(240, 240, 240);
-  border-radius: 0.125rem;
   transition: all 0.3s;
+  background-color: transparent;
   &:hover, &:focus {
-    color: black;
+    color: var(--blacked);
+    background-color: white;
   } 
 }
 .container {
   position: relative;
-  min-width: 10rem;
+  min-width: 12rem;
   margin: 0 1rem;
   .placeholder {
     @include button;
-    border: 2px solid rgb(240, 240, 240);
+    border: 2px solid var(--light);
     &:hover {
-      border-color: lightgray;
+      border-color: gray;
     }
   }
   .dropdown {
@@ -37,24 +36,23 @@
     left: 0;
     max-height: 0;
     overflow: hidden;
-    border: 1px solid transparent;
     transition: all 0.25s;
-    background-color: white;
+    background-color: transparent;
+    border: 2px solid transparent;
+    box-shadow: 0 0 1rem -0.85rem var(--blacked);
     .item {
       @include button;
-      border: unset;
-      border-radius: 0;
       &:hover, &:focus {
-        color: black;
-        background-color: rgb(248, 248, 248);
+        color: var(--blacked);
+        background-color: whitesmoke;
       } 
     }
     .selected {
-      color: lightgray;
-      background-color: black;
+      color: whitesmoke;
+      background-color: var(--blacked);
       &:hover, &:focus {
         color: white;
-        background-color: black;
+        background-color: var(--blacked);
       } 
     }
   }
@@ -62,6 +60,7 @@
     overflow-y: scroll;
     max-height: 10rem;
     height: max-content;
-    border-color: rgb(235, 235, 235);
+    background-color: white;
+    border: 2px solid var(--light);
   }
 }

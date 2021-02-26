@@ -12,9 +12,10 @@
   text-transform: capitalize;
   height: 6rem;
   transition: all 0.3s;
-  border: 2px solid rgb(240, 240, 240);
+  background-color: white;
+  border: 2px solid var(--light);
   &:hover {
-    border-color: lightgray;
+    border-color: var(--dimmed);
   }
   img {
     width: 6rem;
