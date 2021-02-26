@@ -1,32 +1,28 @@
+@mixin text {
+  max-width: 14rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 .container {
   display: flex;
   color: unset;
-  height: 5rem;
-  font-size: 90%;
   overflow: hidden;
   text-decoration: unset;
+  text-transform: capitalize;
+  height: 6rem;
   transition: all 0.3s;
-  border-radius: 0.25rem;
-  border: 2px solid rgb(235, 235, 235);
+  border: 2px solid rgb(240, 240, 240);
   &:hover {
-    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1);
+    border-color: lightgray;
   }
   img {
-    width: auto;
-    height: 5rem;
-    min-width: 5rem;
-    border-radius: 0.25rem;
+    width: 6rem;
+    height: 6rem;
   }
   .content {
     display: flex;
-    align-items: center;
-    h3 {
-      width: 14rem;
-      margin: 1rem;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      text-transform: capitalize;
-    }
+    height: 3rem;
+    padding: 1rem;
   }
 }

@@ -21,25 +21,21 @@ const RepoCard = (props: Repo, index:number) => {
   } = props;
 
   return (
-    <a key={id + userId + index} href={repoUrl} className={classes.container} rel="noreferrer" target="_blank">
-      <div className={classes.content}>
-        <span className={classes.title}>
-          <h3>{name}</h3>
-          <span>
-            <strong>{stars}</strong>
-            <Icon icon={faStar} />
-          </span>
+    <a key={id + userId + index} href={repoUrl} rel="noreferrer" target="_blank" className={classes.container}>
+      <span className={classes.header}>
+        <strong>{name}</strong>
+        <span>
+          <strong>{stars}</strong>
+          <Icon icon={faStar} />
         </span>
-        <p className={classes.date}>{dayjs(createdAt).format('D MMMM YYYY')}</p>
+      </span>
+      <div className={classes.content}>
+        <p>{dayjs(createdAt).format('D MMMM YYYY')}</p>
       </div>
-      <div className={classes.owner}>
+      <a href={profileUrl} rel="noreferrer" target="_blank" className={classes.footer}>
         <img src={imageUrl} alt={userName} />
-        <div className={classes.content}>
-          <a href={profileUrl} rel="noreferrer" target="_blank">
-            <h4>{userName}</h4>
-          </a>
-        </div>
-      </div>
+        <strong>{userName}</strong>
+      </a>
     </a>
   );
 };

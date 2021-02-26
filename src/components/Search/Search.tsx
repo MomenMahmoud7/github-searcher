@@ -11,9 +11,9 @@ import classes from './Search.module.scss';
 
 const Search = () => {
   const searchTypes = [
-    { label: 'User', value: 'users' },
-    { label: 'Repository', value: 'repositories' },
+    { label: 'Users', value: 'users' },
     { label: 'Issues', value: 'issues' },
+    { label: 'Repositories', value: 'repositories' },
   ];
   const {
     search: { searchType, searchText },
