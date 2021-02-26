@@ -19,7 +19,7 @@
 }
 .container {
   position: relative;
-  min-width: 12rem;
+  min-width: 10rem;
   margin: 0 1rem;
   .placeholder {
     @include button;

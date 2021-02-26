@@ -1,7 +1,6 @@
 .container {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   padding: 1rem 0;
   .input {
     font-size: 100%;
@@ -13,10 +12,12 @@
     box-sizing: border-box;
     transition: all 0.3s;
     background: transparent;
+    border-radius: 0;
     border: 2px solid var(--primary-darkest);
     ::-moz-focus-inner {
       border: 0;
       padding: 0;
+      border-radius: 0;
     }
     &:hover, &:focus {
       color: var(--secondary);
