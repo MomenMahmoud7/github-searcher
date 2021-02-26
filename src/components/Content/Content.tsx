@@ -38,7 +38,7 @@ const Content = () => {
   const dispatch = useDispatch();
   const onScroll = (event:UIEvent<HTMLDivElement>) => {
     const { currentTarget: { scrollHeight, scrollTop, clientHeight } } = event;
-    const listBottomReached = scrollHeight - clientHeight === scrollTop;
+    const listBottomReached = scrollHeight - Math.trunc(scrollTop) === clientHeight;
     if (!listBottomReached) return;
     dispatch(setScrollLoading(true));
     dispatch(_debounce(onSearch(searchText, searchType, pageNumber + 1, data), 500));

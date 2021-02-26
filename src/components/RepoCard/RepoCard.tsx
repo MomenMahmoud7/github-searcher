@@ -2,6 +2,7 @@ import dayjs from 'dayjs';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { Repo } from '../../types';
+import avatarPlaceholder from '../../assets/avatar-placeholder.png';
 
 import classes from './RepoCard.module.scss';
 
@@ -33,7 +34,7 @@ const RepoCard = (props: Repo, index:number) => {
         <p>{dayjs(createdAt).format('D MMMM YYYY')}</p>
       </div>
       <a href={profileUrl} rel="noreferrer" target="_blank" className={classes.footer}>
-        <img src={imageUrl} alt="" />
+        <img src={imageUrl || avatarPlaceholder} alt="" />
         <strong>{userName}</strong>
       </a>
     </a>

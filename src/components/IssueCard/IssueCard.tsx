@@ -2,6 +2,7 @@ import dayjs from 'dayjs';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { Issue } from '../../types';
+import avatarPlaceholder from '../../assets/avatar-placeholder.png';
 
 import classes from './IssueCard.module.scss';
 
@@ -35,7 +36,7 @@ const IssueCard = (props: Issue, index:number) => {
         <p>{body || '----'}</p>
       </div>
       <a href={profileUrl} rel="noreferrer" target="_blank" className={classes.footer}>
-        <img src={imageUrl} alt="" />
+        <img src={imageUrl || avatarPlaceholder} alt="" />
         <strong>{userName}</strong>
       </a>
     </a>
