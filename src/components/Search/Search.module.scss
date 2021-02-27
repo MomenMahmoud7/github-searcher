@@ -10,17 +10,14 @@
     width: 100%;
     max-width: 25rem;
     padding: 0 1rem;
-    color: var(--secondary-light);
-    box-sizing: border-box;
-    transition: all 0.3s;
-    background: transparent;
     border-radius: 0;
+    // -moz-appearance: none;
+    // -webkit-appearance: none;
+    box-shadow: none !important;
+    background: transparent;
+    color: var(--secondary-light);
+    transition: all 0.3s;
     border: 2px solid var(--primary-darkest);
-    ::-moz-focus-inner {
-      border: 0;
-      padding: 0;
-      border-radius: 0;
-    }
     &:hover, &:focus {
       color: var(--secondary);
       background: var(--primary);
