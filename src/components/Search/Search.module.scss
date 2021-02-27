@@ -5,15 +5,14 @@
   .input {
     appearance: none;
     font-size: 100%;
-    outline: unset;
+    outline: none;
     height: 3rem;
     min-width: 10rem;
     width: 100%;
     max-width: 25rem;
     padding: 0 1rem;
+    margin-right: 1rem;
     border-radius: 0;
-    // -moz-appearance: none;
-    // -webkit-appearance: none;
     background: transparent;
     color: var(--secondary-light);
     box-sizing: border-box;
