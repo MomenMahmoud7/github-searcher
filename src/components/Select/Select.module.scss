@@ -7,7 +7,7 @@
   border: unset;
   width: 100%;
   height: 3rem;
-  color: var(--secondary-light);
+  color: var(--secondary-first);
   font-size: 100%;
   padding: 0 1rem;
   transition: all 0.3s;
@@ -22,9 +22,9 @@
   min-width: 10rem;
   .placeholder {
     @include button;
-    border: 2px solid var(--primary-darkest);
+    border: 2px solid var(--primary-second);
     &:hover, &:focus {
-      border-color: var(--secondary-lightest);
+      border-color: var(--secondary-first);
     }
   }
   .dropdown {
@@ -43,11 +43,11 @@
       @include button;
       &:hover, &:focus {
         color: var(--secondary);
-        background-color: var(--primary-dark);
+        background-color: var(--primary-first);
       } 
     }
     .selected {
-      color: var(--primary-dark);
+      color: var(--primary-first);
       background-color: var(--secondary);
       &:hover, &:focus {
         color: var(--primary);
@@ -60,6 +60,6 @@
     max-height: 10rem;
     height: max-content;
     background-color: var(--primary);
-    border: 2px solid var(--primary-darkest);
+    border: 2px solid var(--primary-second);
   }
 }

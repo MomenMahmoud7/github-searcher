@@ -13,9 +13,9 @@
   height: 6rem;
   transition: all 0.3s;
   background-color: var(--primary);
-  border: 2px solid var(--primary-darkest);
+  border: 2px solid var(--primary-second);
   &:hover {
-    border-color: var(--secondary-light);
+    border-color: var(--secondary-first);
   }
   img {
     width: 6rem;

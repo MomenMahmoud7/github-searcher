@@ -11,9 +11,9 @@
   height: 10rem;
   transition: all 0.3s;
   background-color: var(--primary);
-  border: 2px solid var(--primary-darkest);
+  border: 2px solid var(--primary-second);
   &:hover {
-    border-color: var(--secondary-light);
+    border-color: var(--secondary-first);
   }
   .header {
     display: flex;
@@ -45,7 +45,7 @@
       max-width: 16rem;
       margin: 0;
       font-size: 85%;
-      color: var(--secondary-light);
+      color: var(--secondary-first);
     }
     
   }
@@ -57,9 +57,9 @@
     color: unset;
     text-decoration: unset;
     text-transform: capitalize;
-    background-color: var(--primary-dark);
+    background-color: var(--primary-first);
     transition: all 0.3s;
-    border-top: 2px solid var(--primary-darkest);
+    border-top: 2px solid var(--primary-second);
     img {
       height: 3rem;
       width: 3rem;
@@ -68,11 +68,12 @@
       @include text;
       max-width: 14rem;
       margin: 0 1rem;
-      color: var(--secondary-light);
+      color: var(--secondary-first);
       transition: all 0.3s;
     }
     &:hover {
-      border-color: var(--secondary-light);
+      background-color: var(--primary-second);
+      border-color: var(--secondary-first);
       strong {
         color: var(--secondary);
       }
